@@ -4,7 +4,7 @@
 The python snippets for manipulation of big data
 
 The repository consists of codes/python snippets useful for big data manipulations, including converting the files, decoding, 
-summing up across the columns, etc.
+summing up across the columns, visualizing, etc.
 
 1. `artificial_bulk.ipynb`
  The artifical bulk notebook shows how to transform a single cell sequencing dataset in `hdf5` format into a bulk RNA-seq expression matrix (`tsv` file)
