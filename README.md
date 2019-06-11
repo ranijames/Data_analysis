@@ -7,7 +7,7 @@ The repository consists of codes/python snippets useful for big data manipulatio
 summing up across the columns, visualizing, etc.
 
 1. `artificial_bulk.ipynb`
- The artifical bulk notebook shows how to transform a single cell sequencing dataset in `hdf5` format into a bulk RNA-seq expression matrix (`tsv` file)
+This notebook consits of python code to transform a single cell sequencing dataset in `hdf5` format into a bulk RNA-seq expression matrix (`tsv` file)
 
 2. 	`merging_multiple_files_intone.ipynb`
 This notebook shows how to merge multiple tsv files into a single dataframe
