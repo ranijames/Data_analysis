@@ -14,3 +14,6 @@ This notebook shows how to merge multiple tsv files into a single dataframe
 
 3. `data_report_visual_analysis.ipynb`
  This notebook represents the visual analysis of a given dataset as boxplots, category plot , and swarmplots using python seaborn library
+ 
+ 4. `list_difference_remove_unwanted_characters.ipynb`
+ This notebook contains scripts for comparing two lists, for there difference. In addition to that extarcting rows within a datframe based on which column you need. 
