@@ -17,3 +17,6 @@ This notebook shows how to merge multiple tsv files into a single dataframe
  
  4. `list_difference_remove_unwanted_characters.ipynb`
  This notebook contains scripts for comparing two lists, for there difference. In addition to that extarcting rows within a dataframe based on which column you need, and removing unwanted characters (`.`) from the gene symbols.
+ 
+ 5. `merge_dictionary_values.ipynb`
+ This notebook contains scripts for conditional merging of values in a dictionary (based on their keys)
