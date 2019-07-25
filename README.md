@@ -20,3 +20,7 @@ This notebook shows how to merge multiple tsv files into a single dataframe
  
  5. `merge_dictionary_values.ipynb`
  This notebook contains scripts for conditional merging of values in a dictionary (based on their keys)
+
+6. `datframe_maker.py`
+Helps to concatenate different matrices of different shape into a single dataframe based on conitions, and add additional columns to it fill the empty spaces NA . 
+In addition to that, the script helps to aggregate a dataframe based on the frequency of which the column and rows occur together, aka "cross tabulation" using pandas `pivot_table`
