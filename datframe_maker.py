@@ -20,7 +20,7 @@ parser.add_argument("sample_id", help=" The Sample_ids")
 parser.add_argument("path", help="The path to drug matries")
 parser.add_argument("mutation_file", help="Your input muation file")
 
-if len(sys.argv) < 2:
+if len(sys.argv) < 3:
     parser.print_help()
     sys.exit(0)
 
