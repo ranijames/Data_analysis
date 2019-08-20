@@ -24,3 +24,7 @@ This notebook shows how to merge multiple tsv files into a single dataframe
 6. `datframe_maker.py`
 Helps to concatenate different matrices of different shape into a single dataframe based on conitions, and add additional columns to it fill the empty spaces NA . 
 In addition to that, the script helps to aggregate a dataframe based on the frequency of which the column and rows occur together, aka "cross tabulation" using pandas `pivot_table`
+
+7. `dataframe_multi_transformation.py`
+ Helps to concatenate files of different shapes. In addition to that make long formatted dataframe based on commonly occuring columns names. Striping multiple characters including, square brackets, white space, digits etc.
+ 
