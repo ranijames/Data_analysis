@@ -26,5 +26,5 @@ Helps to concatenate different matrices of different shape into a single datafra
 In addition to that, the script helps to aggregate a dataframe based on the frequency of which the column and rows occur together, aka "cross tabulation" using pandas `pivot_table`
 
 7. `dataframe_multi_transformation.py`
- Helps to concatenate files of different shapes. In addition to that make long formatted dataframe based on commonly occuring columns names. Striping multiple characters including, square brackets, white space, digits etc.
+ Parse through multiple files of different diamensions, select columns if it is equal to the filename and concatenate them into a single dataframe. In addition to that, make long formatted dataframe based on commonly occuring columns names. Striping multiple characters including, square brackets, white space, digits etc.
  
