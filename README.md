@@ -28,3 +28,7 @@ In addition to that, the script helps to aggregate a dataframe based on the freq
 7. `dataframe_multi_transformation.py`
  Parse through multiple files of different diamensions, select columns if it is equal to the filename and concatenate them into a single dataframe. In addition to that, make long formatted dataframe based on commonly occuring columns names. Striping multiple characters including, square brackets, white space, digits etc.
  
+ 8. `list_to_dataframe.py`
+The script takes in list of fastq files from mutiple lanes and both reads. Then converts the input into a dataframe with 4 columns. Column with `sample_id`, `lane` , `fastq1` and `fastq2` reads.
+
+ 
