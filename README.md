@@ -31,4 +31,7 @@ In addition to that, the script helps to aggregate a dataframe based on the freq
  8. `list_to_dataframe.py`
 The script takes in list of fastq files from mutiple lanes and both reads. Then converts the input into a dataframe with 4 columns. Column with `sample_id`, `lane` , `fastq1` and `fastq2` reads.
 
+9. `GT_converter.py`
+The script to convert the columns from a GTF file to a tsv file. The contents used for convertion are the exon or CDS positions for each transcripts of a gene. 
+
  
