@@ -34,4 +34,9 @@ The script takes in list of fastq files from mutiple lanes and both reads. Then 
 9. `GT_converter.py`
 The script to convert the columns from a GTF file to a tsv file. The contents used for convertion are the exon or CDS positions for each transcripts of a gene. 
 
+ 10. `annotation_parser.py`
+ Script collects and make a lists of positions for each exon and CDS for all trancripts in a altered GTF file. This conversions can be done on both mouse and human annoation file. 
  
+  11. `dropbox_symlink_maker.py`
+  Scripts generates symlinks for files from a list of diretcories, for given list of file name extensions.
+  
