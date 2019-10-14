@@ -41,6 +41,10 @@ The script to convert the columns from a GTF file to a tsv file. The contents us
   Scripts generates symlinks for files from a list of diretcories, for given list of file name extensions.
   
   12. `fastq_mover.py`
-  Scriot moves the fastq files from source to desination based on conditions. Additionally, the script makes destination directory based on the given list of sample_ids. The sample_id's are extarcted from the list of fastq file names. The input is path to fastq files and path where you need to generate the desination directories and finally move the `fastq` files
+  Script moves the fastq files from source to desination based on conditions. Additionally, the script makes destination directory based on the given list of sample_ids. The sample_id's are extarcted from the list of fastq file names. The input is path to fastq files and path where you need to generate the desination directories and finally move the `fastq` files
+  
+  13. `evidence_generator.py`
+  
+  The script generates a merged file based on the same columns from two different GENCODE files. Besides that, it the script creates a column which is comma seperated list of evidences collected for each value in the row based on the secound file.
   
   
