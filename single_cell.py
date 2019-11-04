@@ -11,6 +11,8 @@ import numpy as np
 import pandas as pd
 import sys
 import argparse
+import warnings
+warnings.filterwarnings("ignore")
 
 __author__ = 'Alva James'
 
@@ -33,36 +35,36 @@ args   = parser.parse_args()
 path   = args.input
 output = args.output
 
-# Making the list of files for the h5 files in the input location
-hdfiles = [os.path.join(path,i) for i in os.listdir(path) if i.endswith('__raw.h5')]
 
 def main(hdfiles):
     """
     The function does the conversion and column-wise sum of cell expression values from single cell datasets
     """
     for files in hdfiles:
-        name    = os.path.basename(os.path.normpath(files))
-        sampleid=name.split('-')[0]
-        raw     =h5py.File(files,'r')
-        rawcounts=raw['raw_counts']
-        cells =raw['cell_attrs']
-        genes =raw['gene_attrs']
-        rawcountsA =np.array(rawcounts)
-        rawcountsT=rawcountsA.transpose()
-        gene_ids=np.array(genes['gene_ids'])
+        name     = os.path.basename(os.path.normpath(files))
+        sampleid = name.split('-')[0]
+        raw      = h5py.File(files,'r')
+        rawcounts= raw['raw_counts']
+        cells    = raw['cell_attrs']
+        genes    = raw['gene_attrs']
+        rawcountsA = np.array(rawcounts)
+        rawcountsT = rawcountsA.transpose()
+        gene_ids   = np.array(genes['gene_ids'])
         mydataframe=pd.DataFrame(data=rawcountsT,index=gene_ids,columns=cells['cell_names'])
         mydataframe["cell_sum"]=mydataframe.sum(axis=1,skipna=True)
-        newdf = mydataframe[["cell_sum"]]
+        newdf                  = mydataframe[["cell_sum"]]
         newdf.reset_index(level=0,inplace=True)
         newdf.rename(columns={'index':'gene'},inplace=True)
-        newdf['gene']=newdf['gene'].str.decode('utf-8')
-        newdf['cell_sum'] =newdf['cell_sum'].astype(int)
+        newdf['gene']       = newdf['gene'].str.decode('utf-8')
+        newdf['cell_sum']   = newdf['cell_sum'].astype(int)
         newdf.to_csv(os.path.join(output,sampleid+".tsv"),sep='\t',index=False,header=None)
     return 0
 
+# Making the list of files for the h5 files in the input location
+hdfiles = [os.path.join(path,i) for i in os.listdir(path) if i.endswith('__raw.h5')]
 
-if __name__ ="__main__"
-    main(hdfiles)
+if __name__ == "__main__":
+    sys.exit(main(hdfiles))
         
         
 
