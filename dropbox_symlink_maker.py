@@ -30,10 +30,8 @@ sample = sampl_lab['sample'].tolist()
 samp_dic                = dict((samples,[]) for samples in sample)
 #print(samp_dic)
 tp_results              = ['alignments','expression','hypoxia','tcga_boxplot/png_images','qc/fastqc']
-snakemake_folders       = [dirs for dirs in os.listdir(results)]
 snakemake_subfolders    = [os.path.join(results, name) for name, sub, files in os.walk(results) if os.path.isdir(os.path.join(results,name))]
 snakemake_subfolders_filtered = [s for s in snakemake_subfolders if s.endswith(tuple(tp_results))]
-snakemake_files         = [os.path.join(results,name) for root, sub, files in os.walk(results) for name in files]
 extensions              = ['all.bam','fastqc.zip','.expression.tsv','tcga_cohort.png','hypoxia_score.tsv']
 
 file_paths = []
