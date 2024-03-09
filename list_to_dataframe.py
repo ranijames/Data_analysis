@@ -14,6 +14,8 @@ Author: Alva James, September 17 2019
 """
 parser = argparse.ArgumentParser()
 parser.add_argument("sample_ids", help="The file with absolute path to the new line seperated list of sample_ids. Each sample_id should start with the BSSE string")
+parser.add_argument("read_pos", help="The read 1 and 2 position in sample id string, for eg: if sample id is MA_1_CTG_TTG_R1.fastq.gz the read position is 4")
+parser.add_argument("sample_pos", help="The sample name position in sample id string, for eg: if sample id is MA_1_CTG_TTG_R1.fastq.gz the sample name position is 0")
 parser.add_argument("output", help="The path where you need your output samples.tsv file")
 
 if len(sys.argv) < 2:
@@ -22,8 +24,12 @@ if len(sys.argv) < 2:
 
 args = parser.parse_args()
 samples            = args.sample_ids
+read_pos           = args.read_pos
+sample_pos         = args.sample_pos
 output             =  args.output
 
+#read_pos=10
+#sample_pos=0
 
 def opening_samples_as_list(samples,l1):
     """
@@ -38,9 +44,9 @@ l1=[]
 opening_samples_as_list(samples,l1)
 
 # extracting the string for sample_id, and fatsqs from reads one and two
-col1     = [x.split('_')[5] for x in l1]
-col3     = [x for x in l1 if x.split('_')[11] == "R1"]
-col4     = [x for x in l1 if x.split('_')[11] == "R2"]
+col1     = [x.split('_')[sample_pos] for x in l1]
+col3     = [x for x in l1 if x.split('_')[read_pos] == "R1"]
+col4     = [x for x in l1 if x.split('_')[read_pos] == "R2"]
 
 # Converting the above list to dictionaries with sample_id as there key
 
